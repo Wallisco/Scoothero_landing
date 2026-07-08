@@ -115,19 +115,17 @@
 
 <header>
   <nav class="wrap">
-    <a class="logo" href="index.html" aria-label="ScootHero"><img src="assets/logo-navy.svg" alt="ScootHero" onerror="this.replaceWith(Object.assign(document.createElement('strong'),{textContent:'ScootHero',style:'font-family:Lexend,sans-serif;font-size:19px;color:var(--navy);'}))"></a>
+    <a class="logo" href="index.html#top" aria-label="ScootHero"><img src="assets/logo-navy.svg" alt="ScootHero" onerror="this.replaceWith(Object.assign(document.createElement('strong'),{textContent:'ScootHero',style:'font-family:Lexend,sans-serif;font-size:19px;color:var(--navy);'}))"></a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="who-its-for.html">Who it's for</a>
-      <a href="vehicles.html">Vehicles</a>
-      <a href="marketplace.html" class="nav-tagged"><span class="nav-tag">Beta testing</span><span>Marketplace</span></a>
-      <a href="financing.html">Financing</a>
-      <a href="savings.html">Savings</a>
-      <a href="coverage.html">Coverage</a>
-      <a href="sector-data.html">Sector data</a>
       <a href="about.html" class="active">About us</a>
+      <a href="index.html#icp">Who it's for</a>
+      <a href="index.html#suite">Vehicles</a>
+      <a href="index.html#marketplace" class="nav-tagged"><span class="nav-tag">Beta testing</span><span>Marketplace</span></a>
+      <a href="index.html#financing">Financing</a>
+      <a href="index.html#calculator">Savings</a>
+      <a href="index.html#lead">Get a demo</a>
     </div>
-    <a href="demo.html" class="btn btn-primary" style="padding:11px 20px; font-size:13.5px;">Get a fleet demo</a>
+    <a href="index.html#lead" class="btn btn-primary" style="padding:11px 20px; font-size:13.5px;">Get a fleet demo</a>
   </nav>
 </header>
 
@@ -267,8 +265,8 @@
   <div class="wrap">
     <h2>Be part of the next chapter</h2>
     <p>Whether you run a fleet or ride for one, the switch to electric starts with one conversation.</p>
-    <a href="demo.html" class="btn btn-primary">Get a fleet demo</a>
-    <a href="savings.html" class="btn btn-ghost">Calculate your savings</a>
+    <a href="index.html#lead" class="btn btn-primary">Get a fleet demo</a>
+    <a href="index.html#calculator" class="btn btn-ghost">Calculate your savings</a>
   </div>
 </section>
 
@@ -298,7 +296,7 @@ window.addEventListener('click', function(e){
       return;
     }
 
-    /* Cross-page links (e.g. about.html, demo.html): in an embedded preview these
+    /* Cross-page links (e.g. about.html, index.html#lead): in an embedded preview these
        cannot resolve, so show a notice instead of a broken navigation. On the live site
        (top-level window) they navigate normally. */
     var isRelativePage = href.indexOf('://') === -1 && href.indexOf('mailto:') !== 0 && href.indexOf('tel:') !== 0;

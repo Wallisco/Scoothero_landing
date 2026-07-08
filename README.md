@@ -1,24 +1,32 @@
-# ScootHero — Multi-Page Site (v2)
+# ScootHero Landing — Test Deploy
 
-10 pages, shared styles.css, assets folder. Deploy the WHOLE folder.
+Two pages, one assets folder. Everything self-contained; missing images fall back
+gracefully (wordmarks/hidden blocks), so the site is fully testable as-is.
 
-Pages: index (home: hero, client carousel, explore cards, proof counters,
-case study, partner carousel, milestones) · who-its-for · vehicles ·
-marketplace (fleet management + driver marketplace, beta) · financing ·
-savings (calculator) · coverage (address checker) · sector-data · about · demo (HubSpot form)
+## Fastest dummy URL (5 minutes, no Git): Netlify Drop
+1. Go to https://app.netlify.com/drop  (free account, sign in with GitHub/Google)
+2. Drag this WHOLE folder (not the zip) onto the page
+3. You get an instant URL like https://random-name-123.netlify.app
+4. Share it with the team. Re-drag the folder anytime to update.
 
-## Deploy on Render
-1. Push this folder to GitHub (repo root = these files, index.html at top level)
-2. Render -> New -> Static Site -> connect repo -> Publish Directory: .
-3. Done. Every git push auto-deploys.
+## Alternative (familiar pattern): Render Static Site
+1. Push this folder to a GitHub repo (e.g. Wallisco/scoothero-landing)
+2. Render → New → Static Site → connect repo → publish directory: /
+3. URL: https://<name>.onrender.com — free, never sleeps
 
-## Still placeholder (all degrade gracefully)
-- Partner/client logos (assets/logos/*.png) -> show as text until files added
-- Proof counter numbers on home -> replace data-target values with real numbers
-- TDT case study quote -> needs sign-off
-- Coverage checker SWAP_STATIONS array -> replace with real station list
-- Brand photos (logo-navy.svg, hero-ct.jpg, station-1.jpg, etc.) from original asset pack
+## What works on the test URL
+- All tabs, smooth scrolling, page-to-page links (index <-> about)
+- Fleet type switcher, savings calculator, animated counters
+- HubSpot form (portal 148678580, eu1) — test submissions land in HubSpot for real
+- WhatsApp button, mobile tab strip
 
-## Before public launch
-Remove <meta name="robots" content="noindex"> from all pages (added so the
-test site stays out of Google).
+## Known gaps on the test URL (intentional, fine for click-through testing)
+- Partner logos show as text wordmarks (logo files pending clearance)
+- Hero/station/lifestyle photos hidden (brand asset files from original build zip)
+- Coverage map shows the "check my zones" fallback (public map URL pending)
+- Proof counter numbers are placeholders — replace before any public traffic
+
+## Before REAL traffic (not needed for testing)
+- GA4 / Meta Pixel / LinkedIn tags in both pages
+- Real counter numbers, TDT quote sign-off, verified specs
+- Custom domain (get.scoothero.co.za) via CNAME in Wix DNS
