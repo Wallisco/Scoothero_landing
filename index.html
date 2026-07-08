@@ -20,7 +20,15 @@
       <a href="index.html" class="active">Home</a>
       <a href="who-its-for.html">Who it's for</a>
       <a href="vehicles.html">Vehicles</a>
-      <a href="marketplace.html" class="nav-tagged"><span class="nav-tag">Beta testing</span><span>Marketplace</span></a>
+      <details class="nav-drop">
+        <summary>Software</summary>
+        <div class="nav-drop-menu">
+          <a href="marketplace.html#fleetmgmt">Fleet management</a>
+          <a href="marketplace.html#marketplace">Driver marketplace<span class="beta-mini">Beta</span></a>
+        </div>
+      </details>
+      <a href="marketplace.html#fleetmgmt" class="nav-soft-mobile">Fleet mgmt</a>
+      <a href="marketplace.html#marketplace" class="nav-soft-mobile">Driver marketplace</a>
       <a href="financing.html">Financing</a>
       <a href="savings.html">Savings</a>
       <a href="coverage.html">Coverage</a>
@@ -68,7 +76,7 @@
     <div class="subhero-grid">
       <a class="sub-card" href="who-its-for.html"><span class="sc-tag">Fleet types</span><h3>Who it's for</h3><p>Corporate, rental and self-run fleets — pick your path and see what changes for you.</p><span class="sc-go">Open &rarr;</span></a>
       <a class="sub-card" href="vehicles.html"><span class="sc-tag">The machines</span><h3>Vehicles</h3><p>Motov3 and ScootV3 — purpose-built for Southern African roads, specs and all.</p><span class="sc-go">Open &rarr;</span></a>
-      <a class="sub-card" href="marketplace.html"><span class="sc-tag">Platform</span><h3>Marketplace</h3><p>Fleet management system plus a driver marketplace, now in beta.</p><span class="sc-go">Open &rarr;</span></a>
+      <a class="sub-card" href="marketplace.html"><span class="sc-tag">Software</span><h3>Software</h3><p>The fleet management system, plus the driver marketplace now in beta.</p><span class="sc-go">Open &rarr;</span></a>
       <a class="sub-card" href="financing.html"><span class="sc-tag">Money</span><h3>Financing</h3><p>Four paths with Eqstra — from outright purchase to full maintenance lease.</p><span class="sc-go">Open &rarr;</span></a>
       <a class="sub-card" href="savings.html"><span class="sc-tag">Calculator</span><h3>Savings</h3><p>Run your own numbers: fuel vs swap, maintenance, whole-fleet savings.</p><span class="sc-go">Open &rarr;</span></a>
       <a class="sub-card" href="coverage.html"><span class="sc-tag">Network</span><h3>Coverage</h3><p>Type your address, get an instant answer on swap coverage and rollout phases.</p><span class="sc-go">Open &rarr;</span></a>
@@ -262,6 +270,12 @@ window.addEventListener('click', function(e){
     }
   }catch(err){ /* never block the click entirely */ }
 }, true);
+/* Close the Software dropdown when clicking anywhere else */
+document.addEventListener('click', function(e){
+  document.querySelectorAll('details.nav-drop[open]').forEach(function(d){
+    if (!d.contains(e.target)) d.removeAttribute('open');
+  });
+});
 </script>
 </body>
 </html>

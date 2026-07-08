@@ -20,7 +20,15 @@
       <a href="index.html">Home</a>
       <a href="who-its-for.html">Who it's for</a>
       <a href="vehicles.html">Vehicles</a>
-      <a href="marketplace.html" class="nav-tagged"><span class="nav-tag">Beta testing</span><span>Marketplace</span></a>
+      <details class="nav-drop">
+        <summary>Software</summary>
+        <div class="nav-drop-menu">
+          <a href="marketplace.html#fleetmgmt">Fleet management</a>
+          <a href="marketplace.html#marketplace">Driver marketplace<span class="beta-mini">Beta</span></a>
+        </div>
+      </details>
+      <a href="marketplace.html#fleetmgmt" class="nav-soft-mobile">Fleet mgmt</a>
+      <a href="marketplace.html#marketplace" class="nav-soft-mobile">Driver marketplace</a>
       <a href="financing.html">Financing</a>
       <a href="savings.html">Savings</a>
       <a href="coverage.html">Coverage</a>
@@ -318,6 +326,12 @@ window.addEventListener('click', function(e){
     }
   }catch(err){ /* never block the click entirely */ }
 }, true);
+/* Close the Software dropdown when clicking anywhere else */
+document.addEventListener('click', function(e){
+  document.querySelectorAll('details.nav-drop[open]').forEach(function(d){
+    if (!d.contains(e.target)) d.removeAttribute('open');
+  });
+});
 </script>
 </body>
 </html>

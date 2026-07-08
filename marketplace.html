@@ -20,7 +20,15 @@
       <a href="index.html">Home</a>
       <a href="who-its-for.html">Who it's for</a>
       <a href="vehicles.html">Vehicles</a>
-      <a href="marketplace.html" class="nav-tagged active"><span class="nav-tag">Beta testing</span><span>Marketplace</span></a>
+      <details class="nav-drop active">
+        <summary>Software</summary>
+        <div class="nav-drop-menu">
+          <a href="marketplace.html#fleetmgmt">Fleet management</a>
+          <a href="marketplace.html#marketplace">Driver marketplace<span class="beta-mini">Beta</span></a>
+        </div>
+      </details>
+      <a href="marketplace.html#fleetmgmt" class="nav-soft-mobile">Fleet mgmt</a>
+      <a href="marketplace.html#marketplace" class="nav-soft-mobile">Driver marketplace</a>
       <a href="financing.html">Financing</a>
       <a href="savings.html">Savings</a>
       <a href="coverage.html">Coverage</a>
@@ -36,7 +44,7 @@
 <section id="fleetmgmt">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Part one &mdash; the system</div>
+      <div class="eyebrow">The system</div>
       <h2>Fleet management, built into every bike</h2>
       <p>This is the platform we run our own vehicles on &mdash; every Motov3 and ScootV3 ships IoT-connected, so your fleet is visible, serviced and accountable from day one.</p>
     </div>
@@ -223,6 +231,12 @@ window.addEventListener('click', function(e){
     }
   }catch(err){ /* never block the click entirely */ }
 }, true);
+/* Close the Software dropdown when clicking anywhere else */
+document.addEventListener('click', function(e){
+  document.querySelectorAll('details.nav-drop[open]').forEach(function(d){
+    if (!d.contains(e.target)) d.removeAttribute('open');
+  });
+});
 </script>
 </body>
 </html>
